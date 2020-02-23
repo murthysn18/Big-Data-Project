@@ -1,0 +1,56 @@
+# EPL-Prediction-2019
+Big data analytics project files for prediction for EPL 2019-20
+
+## Author
+
+Murthy Srinivas Narasimha
+L00150889
+MSc, Big Data Analytics, LYIT
+Letterkenny, Ireland
+
+## Dependencies
+* scikit-learn
+* pyspark
+* pandas
+* Seaborn
+* glob
+
+## Dataset
+The dataset contains data for last 10 seasons from 2009 to 2019 of English Premier League including current season. The dataset is collected from English premier leaguue statistical data and contains various statistical data such as final and half time result, corners, yellow and red cards etc.
+
+
+## Methodology
+* Data Preprocessing:
+
+The data is read form the files and then cleaned and processed and then stored into the database inside databricks environment.
+
+## Training and Evaluating models
+* `Logistic Regression:`
+
+```sh
+Training a LogisticRegression using a training set size of 1578. . .
+Trained model in 0.0467 seconds
+Made predictions in 0.0257 seconds.
+0.9922894347055488 0.9936628643852978
+
+Training a SVC using a training set size of 1578. . .
+Trained model in 0.3895 seconds
+Made predictions in 0.1723 seconds.
+0.9634490002922199 0.9689480354879595
+
+Training a MultinomialNB using a training set size of 1578. . .
+Trained model in 0.0074 seconds
+Made predictions in 0.0151 seconds.
+0.6829792659783704 0.720532319391635
+
+
+Files and execution:
+Dataset is added inside the folder Dataset where we have teamperformance data in a file named 'TeamPerformance0919.csv', the data of teams playing is in 'Teams.csv' and the fixtures in this season in 'fixtures.csv'
+
+EPL prediction code folder contains files realted to the code. The python file containing the complete code implementing the machine learning. The .dbc file having the database related code. Both these files to be imported into a workspace in databricks and run all for execution.
+
+
+## Conclusion
+Even though the F1 score and accuracy for the training set is lower than the F1 score and accuracy of testing set, given the new data to model to classify with all features with value 0 (i.e. the game that has not been played has attributes like ‘FTAG’, ‘FTAG’, ‘HS’, ‘AS’ value 0) except for the Home Team name and the Away Team name, the trained model was able to predict future instances marginally better.
+
+
